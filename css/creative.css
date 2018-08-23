@@ -12,7 +12,7 @@ body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 hr {
-  border-color: gray;
+  border-color: rgb(58, 58, 58);
   border-width: 5px;
   max-width: 200px;
 }
@@ -29,14 +29,7 @@ a:hover,
 a:focus {
   color: #eb3812;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-}
+
 p {
   font-size: 16px;
   line-height: 1.5;
@@ -44,6 +37,7 @@ p {
 }
 .bg-primary {
   background-color: #F05F40;
+  text-transform: capitalize;
 }
 .bg-dark {
   background-color: #222222;
@@ -61,6 +55,23 @@ aside {
 .no-padding {
   padding: 0;
 }
+
+/* ---- TOP Button Starts Here ---- */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  cursor: crosshair;
+  background-color: red;
+  padding-top: 15px;
+}
+
+
+/* ---- Navbar Style Starts Here ---- */
+
 .navbar-default {
   background-color: white;
   border-color: rgba(34, 34, 34, 0.05);
@@ -69,156 +80,171 @@ aside {
   -moz-transition: all 0.35s;
   transition: all 0.35s;
 }
-.navbar-default .navbar-header .navbar-brand {
+.login {
+  font-size: 14px;
+  color: red;
+}
+.navbar-brand {
   color: #F05F40;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
-.navbar-default .navbar-header .navbar-brand:hover,
-.navbar-default .navbar-header .navbar-brand:focus {
+.navbar-brand:hover, 
+.navbar-brand:focus {
   color: #eb3812;
 }
-.navbar-default .navbar-header .navbar-toggle {
+.navbar-toggle {
   font-weight: 700;
   font-size: 12px;
   color: #222222;
   text-transform: uppercase;
 }
-.navbar-default .nav > li > a,
-.navbar-default .nav > li > a:focus {
+.nav > li > a,
+.nav > li > a:focus {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 13px;
   color: #222222;
 }
-.navbar-default .nav > li > a:hover,
-.navbar-default .nav > li > a:focus:hover {
+.nav > li > a:hover,
+.nav > li > a:focus:hover {
   color: #F05F40;
 }
-.navbar-default .nav > li.active > a,
-.navbar-default .nav > li.active > a:focus {
+.nav > li.active > a,
+.nav > li.active > a:focus {
   color: #F05F40 !important;
   background-color: transparent;
 }
-.navbar-default .nav > li.active > a:hover,
-.navbar-default .nav > li.active > a:focus:hover {
+.nav > li.active > a:hover,
+.nav > li.active > a:focus:hover {
   background-color: transparent;
 }
+
+/* ---- Navbar Media Quiery ---- */
+
 @media (min-width: 768px) {
   .navbar-default {
-    background-color: transparent;
+    background-color: white;
     border-color: rgba(255, 255, 255, 0.3);
   }
-  .navbar-default .navbar-header .navbar-brand {
-    color: rgba(255, 255, 255, 1);
+  .navbar-brand:hover, 
+  .navbar-brand:focus {
+    color: rgb(187, 5, 5);
   }
-  .navbar-default .navbar-header .navbar-brand:hover,
-  .navbar-default .navbar-header .navbar-brand:focus {
-    color: white;
+  .nav > li > a,
+  .nav > li > a:focus {
+    color: rgb(7, 7, 7);
   }
-  .navbar-default .nav > li > a,
-  .navbar-default .nav > li > a:focus {
-    color: rgba(255, 255, 255, 1);
-  }
-  .navbar-default .nav > li > a:hover,
-  .navbar-default .nav > li > a:focus:hover {
+  .nav > li > a:hover,
+  .nav > li > a:focus:hover {
     color: white;
   }
   .navbar-default.affix {
     background-color: white;
     border-color: rgba(34, 34, 34, 0.05);
   }
-  .navbar-default.affix .navbar-header .navbar-brand {
+  .navbar-brand {
     color: #F05F40;
-    font-size: 14px;
+    font-size: 20px;
   }
-  .navbar-default.affix .navbar-header .navbar-brand:hover,
-  .navbar-default.affix .navbar-header .navbar-brand:focus {
+  .login{
+    font-size: 14px;
+    color: red;
+  }
+  .navbar-brand:hover,
+  .navbar-brand:focus {
     color: #eb3812;
   }
-  .navbar-default.affix .nav > li > a,
-  .navbar-default.affix .nav > li > a:focus {
+  .nav > li > a,
+  .nav > li > a:focus {
     color: #222222;
   }
-  .navbar-default.affix .nav > li > a:hover,
-  .navbar-default.affix .nav > li > a:focus:hover {
+  .nav > li > a:hover,
+  .nav > li > a:focus:hover {
     color: #F05F40;
   }
 }
+
+/* ---- Header Style Starts Here ---- */
+
 header {
   position: relative;
-  width: 100%;
-  min-height: auto;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-image: url('../img/header4.jpg');
   background-position: center;
-  background-image: url('../img/header3.jpg');
-  text-align: center;
-  color: dimgrey;
-  z-index: 1;
-  
+  width: 100%;
 }
 
-.shadow-box {
-  background-color: white;
-  opacity: .3;
-  z-index: 0;
-}
-
-header .header-content {
+.header-content {
   position: relative;
   text-align: center;
   padding: 100px 15px 100px;
   width: 100%;
+  min-height: auto;
+  background: rgba(204, 204, 204, 0.6);
 }
-header .header-content .header-content-inner h1 {
+
+#header-content-h1 {
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 30px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.932);
 }
-header .header-content .header-content-inner hr {
+
+#header-content-hr {
   margin: 30px auto;
 }
-header .header-content .header-content-inner p {
+
+#header-p {
   font-weight: 900;
-  color: #F05F40;
+  color: rgb(0, 0, 0);
   font-size: 16px;
   margin-bottom: 50px;
+  text-align: center;
 }
+
+/* ---- Header Media Quiery ---- */
+
 @media (min-width: 768px) {
   header {
     min-height: 100%;
   }
-  header .header-content {
+  .header-content {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    padding: 0 50px;
+    padding: 15px 50px;
   }
-  header .header-content .header-content-inner {
+  .header-content-inner {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
   }
-  header .header-content .header-content-inner h1 {
+  #header-content-h1 {
     font-size: 50px;
   }
-  header .header-content .header-content-inner p {
+  #header-content-p {
     font-size: 18px;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
 }
+
+/* ---- Customer Review Section Starts Here ---- */ 
+
 .section-heading {
   margin-top: 0;
+  
 }
 .service-box {
   max-width: 400px;
@@ -227,11 +253,15 @@ header .header-content .header-content-inner p {
 @media (min-width: 992px) {
   .service-box {
     margin: 20px auto 0;
+    
   }
 }
 .service-box p {
   margin-bottom: 0;
 }
+
+/* ---- Portfolio Section Style Here ---- */
+
 .portfolio-box {
   position: relative;
   display: block;

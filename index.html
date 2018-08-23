@@ -26,7 +26,7 @@
 </head>
 
 <body id="page-top">
-
+    <!-- Navbar Starts Here -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,52 +34,55 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Swag Doctors</a>
+                <a class="navbar-brand" href="index.html">Swag Doctors</a>
+                <a class="navbar-brand login" href="login.html">LOGIN</a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!-- Navbar Links -->
+
+            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a href="#services">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a href="#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
     </nav>
 
+    <!-- INTRO Header Starts Here -->
+
     <header>
-        <div class="header-content">
-            <div class="shadow-box">
+        <div class="header-content" id="shadow-box"><div>
             <div class="header-content-inner">
-                <h1 id="homeHeading">Providing Total Solutions Today For Businesses Who Think For Tomorrow!</h1>
-                <hr>
-                <p>Here at Swag Doctors we are committed to providing you with a total "wing to wing" solution for your enterprise infrastructure at a cost you'll love and always with a smile!</p>
+                <h1 id="header-content-h1">Providing Total Solutions Today For Businesses Who Think For Tomorrow!</h1>
+                <hr id="header-content-hr">
+                <p id="header-p">Here at Swag Doctors we are committed to providing you with a total "wing to wing" solution for your enterprise infrastructure at a cost you'll love and always with a smile!</p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
             </div>
             </div>
         </div>
     </header>
 
+    <!-- Customer Review Section Here -->
+
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
+                    <h2 class="section-heading">Customer Satisfaction is our #1 proiority!</h2>
                     <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+                    <p class="text-faded">"Ever since we started using the services provided by Swag Doctors we have not only saved a ton of money as a business, but we have also never had another missed SLA or have we had any downtime... EVER!" - SuperDopeYo Corp</p>
+                    <a href="#services" class="btn btn-default btn-xl sr-button">Get Started!</a>
                 </div>
             </div>
         </div>
@@ -253,6 +256,24 @@
             </div>
         </div>
     </section>
+
+    <a type="button" onclick="topFunction()" class="btn btn-primary" id="myBtn" href="#page-top">TOP</a>
+
+<script>
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+
+</script>
 </body>
 
 </html>
+
+
