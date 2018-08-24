@@ -24,6 +24,7 @@ var config = {
   firebase.initializeApp(config);
 
   var dataRef = firebase.database();
+  var auth = firebase.auth();
 
 // Initial Values
 var name = "";
@@ -110,3 +111,54 @@ dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", functio
 // Once user has signed up and logged in, they see log out button, no sign up, or login
 // Each web page must MUST check if user is authenticated
 // User has logged in, but closed page, how to check user auth (session mgmt)
+
+$("#login-user").on("click", function (event) {
+    event.preventDefault();
+    var email = $("#email-login").val();
+    var password = $("#password-login").val();
+
+    console.log(email, password);
+    var promise = auth.signInWithEmailAndPassword(email, password).catch(function(error) {
+
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode)
+        console.log(errorMessage)
+        // ...
+    });
+
+    promise.then(function(value) {
+        console.log(value);
+    });
+});
+  
+$(".logout-user").on("click", function (event) {
+    event.preventDefault();
+
+    var promise = auth.signOut().catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode)
+        console.log(errorMessage)
+        // ...
+    });
+
+    promise.then(function(value) {
+        console.log(value);
+    });
+});
+
+auth.onAuthStateChanged(function(user) {
+    if (user) {
+        $(".logout-user").show()
+        $("#login-header").hide()
+        $("#sign-up-header").hide()
+    } else {
+        $(".logout-user").hide()
+        $("#login-header").show()
+        $("#sign-up-header").show()
+
+    }
+  });
