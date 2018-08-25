@@ -268,6 +268,8 @@ section {
 .main-content {
     padding-top: 116px;
     min-height: 100vh;
+    background-image: url(../images/header4.jpg);
+    background: no-repeat;
 }
 
 @media (max-width: 991px) {
@@ -287,7 +289,7 @@ section {
 
 .login-wrap {
     max-width: 540px;
-    padding-top: 8vh;
+    padding-top: 20vh;
     margin: 0 auto;
 }
 
@@ -1143,7 +1145,7 @@ section {
 
 /* ----- Header ----- */
 .header-desktop {
-    background: #f5f5f5;
+    background-color: rgb(235, 195, 162);
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
@@ -1151,7 +1153,7 @@ section {
     top: 0;
     right: 0;
     left: 300px;
-    height: 75px;
+    height: 100px;
     z-index: 3;
 }
 
@@ -1327,7 +1329,7 @@ section {
 
 .noti__item i {
     font-size: 30px;
-    color: #a9b3c9;
+    color: white;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -1570,9 +1572,10 @@ section {
     z-index: 3;
 }
 #swag {
-    font-size: 25px;
+    font-size: 22px;
     font-family: 'Rammetto One', cursive;
     font-weight: 300px; 
+    text-align: center;
 }
 
 .menu-sidebar .navbar__list .navbar__sub-list {
@@ -2086,7 +2089,7 @@ section {
     left: 0;
     top: 0;
     bottom: 0;
-    background: #fff;
+    background: rgb(78, 44, 15, .3);
     overflow-y: auto;
     height: 100vh;
     -webkit-transition: all 0.5s ease;
@@ -2108,7 +2111,7 @@ section {
     -moz-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background: #365cad;
+    background: #f5f5f5;
     padding: 0 35px;
 }
 
@@ -2266,8 +2269,8 @@ section {
 }
 
 .header-desktop2 {
-    height: 75px;
-    background: #4272d7;
+    height: 100px;
+    background-color: rgb(235, 195, 162);
     position: fixed;
     z-index: 1001;
     top: 0;
@@ -2396,7 +2399,8 @@ section {
 .header-button-item {
     font-size: 30px;
     color: #fff;
-    margin-right: 34px;
+    margin-right: 100px;
+    margin-left: 50px;
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -4739,7 +4743,7 @@ section {
 }
 
 .au-breadcrumb .section__content {
-    top: 50%;
+    top: 67%;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);

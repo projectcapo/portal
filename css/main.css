@@ -70,9 +70,13 @@ aside {
 /* ---- Navbar Style Starts Here ---- */
 #swag {
   font-family: 'Rammetto One', cursive;
+  text-align: center;
+}
+.navbar {
+  min-height: 50px !important;
 }
 .navbar-default {
-  background-color: white;
+  background-color: rgb(235, 195, 162);
   border-color: rgba(34, 34, 34, 0.05);
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   -webkit-transition: all 0.35s;
@@ -84,7 +88,7 @@ aside {
   color: red;
 }
 .navbar-brand {
-  color: #F05F40;
+  color: black !important;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
@@ -103,7 +107,7 @@ aside {
 .nav > li > a:focus {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 20px;
   color: #222222;
 }
 .nav > li > a:hover,
@@ -124,7 +128,7 @@ aside {
 
 @media (min-width: 768px) {
   .navbar-default {
-    background-color: white;
+    background-color: rgb(235, 195, 162);
     border-color: rgba(255, 255, 255, 0.3);
   }
   .navbar-brand:hover, 
