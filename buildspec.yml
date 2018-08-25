@@ -8,7 +8,7 @@ phases:
      - echo "pre_build step"
  build:
    commands:
-     - aws s3 sync . "s3://portal.lugc.org"
+     - aws s3 sync . s3://portal.lugc.org/ --delete
  post_build:
    commands:
      - echo "post_build step"
