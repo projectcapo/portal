@@ -1,5 +1,4 @@
 
-// <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
 
 // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {
@@ -94,3 +93,20 @@ dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", functio
     $("#age-display").text(snapshot.val().age);
     $("#comment-display").text(snapshot.val().comment);
 });
+
+
+
+
+// Decide fields to collect when a user signs up
+// Make email username/password required fields
+// On submit, check to see if same user exists, if Yes, prompt user for new user name
+// If No, create user
+// If user sign-up is successful, re-direct to login page
+// Collect username and password
+// Login - Check if username and password exists in DB
+// If yes, re-direct to main screen
+// On Nav, always show Login and Signup the first time you launch
+// If new user, select signup
+// Once user has signed up and logged in, they see log out button, no sign up, or login
+// Each web page must MUST check if user is authenticated
+// User has logged in, but closed page, how to check user auth (session mgmt)
