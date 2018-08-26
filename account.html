@@ -36,14 +36,18 @@
     <!-- Login Helper CSS-->
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
     <script type="text/JavaScript" src="js/auth.js"></script>
+
+    <script type="text/javascript">
+
+  
+        window.addEventListener('load', function() {
+          initUser()
+        });
+      </script>
 </head>
 
 <body class="animsition">
-    <script>
-        window.onload = function () {
-            initUser();
-        };
-    </script>
+
     <div class="page-wrapper">
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar2">
@@ -241,20 +245,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <script>
-                                                if (user){
-                                                    console.log("displayName is " + user);
-                                                }
-                                               // displayName
-                                              // email = user.email;
-                                              // emailVerified = user.emailVerified;
-                                              // photoURL = user.photoURL;
-                                              // isAnonymous = user.isAnonymous;
-                                             // uid = user.uid;
-                                             // providerData = user.providerData;  
-                                                
-                                        </script>
-                  
+      
+                      <h1>Welcome to My Awesome App</h1>
+                      <div id="sign-in-status"></div>
+                      <div id="sign-in"></div>
+                      <div id="account-details"></div>
                                         </tbody>
                                     </table>
                                 </div>
