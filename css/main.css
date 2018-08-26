@@ -1,8 +1,5 @@
-/*!
- * Start Bootstrap - Creative v3.3.7+1 (http://startbootstrap.com/template-overviews/creative)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+
+
 html,
 body {
   height: 100%;
@@ -71,9 +68,15 @@ aside {
 
 
 /* ---- Navbar Style Starts Here ---- */
-
+#swag {
+  font-family: 'Rammetto One', cursive;
+  text-align: center;
+}
+.navbar {
+  min-height: 50px !important;
+}
 .navbar-default {
-  background-color: white;
+  background-color: rgb(235, 195, 162);
   border-color: rgba(34, 34, 34, 0.05);
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   -webkit-transition: all 0.35s;
@@ -85,9 +88,9 @@ aside {
   color: red;
 }
 .navbar-brand {
-  color: #F05F40;
+  color: black !important;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: uppercase;
 }
 .navbar-brand:hover, 
@@ -104,7 +107,7 @@ aside {
 .nav > li > a:focus {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 20px;
   color: #222222;
 }
 .nav > li > a:hover,
@@ -125,7 +128,7 @@ aside {
 
 @media (min-width: 768px) {
   .navbar-default {
-    background-color: white;
+    background-color: rgb(235, 195, 162);
     border-color: rgba(255, 255, 255, 0.3);
   }
   .navbar-brand:hover, 
@@ -174,7 +177,7 @@ header {
   -o-background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-image: url('../img/header4.jpg');
+  background-image: url('../images/header4.jpg');
   background-position: center;
   width: 100%;
 }
@@ -450,6 +453,9 @@ img::-moz-selection {
   color: white;
   background: transparent;
 }
-body {
-  webkit-tap-highlight-color: #222222;
+
+/* ---- LOGIN STYLE HERE ---- */
+
+.login_background {
+  background-image: url('../images/header4.jpg');
 }
