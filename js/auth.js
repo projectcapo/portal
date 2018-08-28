@@ -87,9 +87,11 @@ function toggleSignIn() {
         // [END authwithemail]
     }
     //document.getElementById('quickstart-sign-in').disabled = true;
-    $(".logout-user").show()
-    $(".login-user").hide()
-    $("#sign-up-header").hide()
+    //$(".logout-user").show();
+    //$(".login-user").hide();
+    //$(".login-link").hide();
+    //$("#sign-up-header").hide()
+    $( location ).attr("href", "dashboard.html");
 }
 
 /**
@@ -251,9 +253,9 @@ function initApp() {
               document.getElementById('quickstart-verify-email').disabled = false;
             }
             */
-            $(".logout-user").show()
-            $(".login-user").hide()
-            $("#sign-up-header").hide()
+            //$(".logout-user").show()
+            //$(".login-user").hide()
+            //$("#sign-up-header").hide()
             // [END_EXCLUDE]
         } else {
             // User is signed out.
@@ -353,13 +355,14 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $(".logout-user").on("click", function (event) {
+    $(".sign-out").on("click", function (event) {
         event.preventDefault()
         event.stopPropagation()
         firebase.auth().signOut()
             .then(function () {
                 // Sign-out successful.
-                console.log("sign-out")
+                console.log("sign-out");
+                $( location ).attr("href", "index.html");
             })
             .catch(function (error) {
                 // An error happened
