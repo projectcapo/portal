@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,12 +24,8 @@
     <!-- Theme CSS -->
     <link href="css/main.css" rel="stylesheet">
     <link href="css/registration.css" rel="stylesheet">
-
-
 </head>
-
 <body id="page-top">
-
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,9 +37,7 @@
                 <a class="navbar-brand" id="swag" href="index.html">Swag Doctors</a>
                 <a class="navbar-brand login" href="login.html">LOGIN</a>
             </div>
-
             <!-- Navbar Links -->
-
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -63,13 +56,7 @@
             </div>
         </div>
     </nav>
-
-
-
     <!-- TESTING REGISTRATION PAGE /DATABASE FUNCTIONALITY -->
-
-
-
     <div class="main main-agileits">
         <h1>Client Signup Form</h1>
         <div class="main-agilerow">
@@ -81,34 +68,33 @@
                 <form action="#" method="post">
                     <h3>Step 1 :</h3>
                     <div class="form-w3step1">
-                        <input type="text" name="Name" placeholder="Your Name" required="">
-                        <input type="email" class="email agileits-btm" name="Email" placeholder="Email" required="">
+                        <input type="text" id="name-input" name="Name" placeholder="Your Name" required="">
+                        <input type="text" id="company-input" name="Company Name" placeholder="Company Name">
+                        <input type="email" class="email agileits-btm" id="email-input" name="Email" placeholder="Email" required="">
                     </div>
                     <h3>Step 2 :</h3>
                     <div class="form-w3step1">
-                        <input type="text" name="User Name" placeholder="User Name" required="">
-                        <input type="password" name="Password" placeholder="Password" required="">
+                        <input type="password" id="password-input" name="Password" placeholder="Password" required="">
                         <input type="password" class="agileits-btm" name="confirm password" placeholder="Confirm Password" required="">
                     </div>
                     <h3>Step 3 :</h3>
                     <div class="form-w3step1 w3ls-formrow">
-                        <input type="text" name="Number" placeholder="Mobile number" required="">
-                        <input type="text" class="agileits-btm" name="Your Address" placeholder="Your Address" required="">
+                        <input type="text" id="mobile-input" name="Number" placeholder="Mobile number">
+                        <input type="text" class="agileits-btm" id="address-input" name="Your Address" placeholder="Your Address">
                     </div>
                     <div class="agileits-row2 w3ls-formrow2">
                         <input type="checkbox" id="brand2" value="">
                         <label for="brand2">
                             <span></span>I accept the terms of Use</label>
                     </div>
-                    <input type="submit" value="SUBMIT">
+                    <input id="add-user" type="submit" value="SUBMIT">
                 </form>
             </div>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
-    <script type="text/JavaScript" src="js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script type="text/JavaScript" src="js/auth.js"></script>
+    <script type="text/JavaScript" src="js/register.js"></script>
 </body>
-
 </html>
