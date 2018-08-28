@@ -30,11 +30,54 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <link href="vendor/vector-map/jqvmap.min.css" rel="stylesheet" media="all">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm5QedgW3D7wkJUe_waQRbrc5pZuvpZRc&libraries=places"></script>
 
-
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+          height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
     <!-- Theme CSS -->
     <link href="css/heavy.css" rel="stylesheet">
+<script>
+var map;
+var service;
+var infowindow;
 
+function initMap() {
+  var mapCenter = new google.maps.LatLng(-33.8617374,151.2021291);
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: mapCenter,
+    zoom: 15
+  });
+
+  var request = {
+    query: 'Museum of Contemporary Art Australia',
+    fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry'],
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.findPlaceFromQuery(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      var place = results[i];
+      createMarker(results[i]);
+    }
+  }
+}
+</script>
 </head>
 
 <body class="animsition">
@@ -357,26 +400,8 @@
                     <div class="map-data m-b-40">
                         <h3 class="title-3 m-b-30">
                             <i class="zmdi zmdi-map"></i>map data</h3>
-                        <div class="filters">
-                            <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
-                                <select class="js-select2" name="property">
-                                    <option selected="selected">All Properties</option>
-                                    <option value="">Products</option>
-                                    <option value="">Services</option>
-                                </select>
-                                <div class="dropDownSelect2"></div>
-                            </div>
-                            <div class="rs-select2--dark rs-select2--sm rs-select2--border">
-                                <select class="js-select2 au-select-dark" name="time">
-                                    <option selected="selected">All Time</option>
-                                    <option value="">By Month</option>
-                                    <option value="">By Day</option>
-                                </select>
-                                <div class="dropDownSelect2"></div>
-                            </div>
-                        </div>
-                        <div class="map-wrap m-t-45 m-b-20">
-                            <div id="vmap" style="height: 284px;"></div>
+                      <div id="map" class="map-wrap m-t-45 m-b-20">
+                            <div id="map"></div>
                         </div>
                     </div>
                     <!-- END MAP DATA-->
@@ -414,7 +439,7 @@
 
     <script src="js/dashMain.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/assets.js"></script>
+   <!-- <script src="js/assets.js"></script> -->
 
 </body>
 
