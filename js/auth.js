@@ -89,7 +89,7 @@ function toggleSignIn() {
     //document.getElementById('quickstart-sign-in').disabled = true;
     //$(".logout-user").show();
     //$(".login-user").hide();
-    //$(".login-link").hide();
+    $(".login-link").hide();
     //$("#sign-up-header").hide()
     setTimeout(function () {
         window.location.href = "dashboard.html"; //will redirect to your blog page (an ex: blog.html)
@@ -382,11 +382,12 @@ $(document).ready(function () {
 
 auth.onAuthStateChanged(function (user) {
     if (user) {
-        $(".logout-user").show()
+        $(".logout-link").show()
+        $(".login-link").hide()
         $(".login-user").hide()
         $("#sign-up-header").hide()
-    } else {
-        $(".logout-user").hide()
+   } else {
+        $(".logout-link").hide()
         $(".login-user").show()
         $("#sign-up-header").show()
     }
