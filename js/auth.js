@@ -20,6 +20,7 @@ var config = {
     projectId: "capo-cbd68",
     storageBucket: "capo-cbd68.appspot.com",
     messagingSenderId: "1023788850417"
+<<<<<<< HEAD
 };
 
 firebase.initializeApp(config);
@@ -282,6 +283,19 @@ function initApp() {
 
 
 
+=======
+  };
+  firebase.initializeApp(config);
+
+  var dataRef = firebase.database();
+  var auth = firebase.auth();
+
+// Initial Values
+var name = "";
+var email = "";
+var company = "";
+var comment = "";
+>>>>>>> de15c91274a0b51b0768731d73380874ccb1741d
 /*
 // Capture Button Click
 $("#add-user").on("click", function (event) {
@@ -346,10 +360,51 @@ dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", functio
     $("#comment-display").text(snapshot.val().comment);
 });*/
 
+<<<<<<< HEAD
+=======
+function login(email,password){
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+    .then(function() {
+      // Existing and future Auth states are now persisted in the current
+      // session only. Closing the window would clear any existing state even
+      // if a user forgets to sign out.
+      // ...
+      // New sign-in will be persisted with session persistence.
+      return firebase.auth().signInWithEmailAndPassword(email, password);
+    })
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
+}
+/*
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      console.log("user :" + user)
+    } else {
+      // No user is signed in.
+      console.log("not signed in")
+    }
+  });
+*/
+  var user = firebase.auth().currentUser;
+
+  if (user) {
+      // User is signed in.
+      console.log("user :" + user)
+
+  } else {
+      // No user is signed in.
+      console.log("not signed in")
+  }
+>>>>>>> de15c91274a0b51b0768731d73380874ccb1741d
 
 $(document).ready(function () {
     $(".login-user").on("click", function (event) {
         event.preventDefault();
+<<<<<<< HEAD
         toggleSignIn();
     })
 });
@@ -373,6 +428,51 @@ $(document).ready(function () {
 });
 
 auth.onAuthStateChanged(function (user) {
+=======
+        var email = $("#email-login").val();
+        var password = $("#password-login").val();
+
+        console.log(email, password);
+        login(email,password);
+/*        
+        var promise = auth.signInWithEmailAndPassword(email, password).catch(function (error) {
+
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode)
+            console.log(errorMessage)
+            // ...
+        });
+
+        promise.then(function (value) {
+            console.log(value);
+        });
+        */
+       console.log(firebase.auth().currentUser);
+    });
+
+});
+  
+$(".logout-user").on("click", function (event) {
+    event.preventDefault();
+
+    var promise = auth.signOut().catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode)
+        console.log(errorMessage)
+        // ...
+    });
+
+    promise.then(function(value) {
+        console.log(value);
+    });
+});
+
+auth.onAuthStateChanged(function(user) {
+>>>>>>> de15c91274a0b51b0768731d73380874ccb1741d
     if (user) {
         $(".logout-user").show()
         $(".login-user").hide()
@@ -382,4 +482,8 @@ auth.onAuthStateChanged(function (user) {
         $(".login-user").show()
         $("#sign-up-header").show()
     }
+<<<<<<< HEAD
 });
+=======
+  });
+>>>>>>> de15c91274a0b51b0768731d73380874ccb1741d
