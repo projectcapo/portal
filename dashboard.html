@@ -30,10 +30,19 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
-
+ 
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script type="text/JavaScript" src="js/auth.js"></script>
+    
     <!-- Theme CSS -->
     <link href="css/heavy.css" rel="stylesheet">
-
+    <script type="text/javascript">
+        window.addEventListener('load', function () {
+            initUser()
+        });
+    </script>
 </head>
 
 <body class="animsition">
@@ -59,7 +68,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Your Dashboard</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="#">
+                                    <a href="request.html">
                                         <i class="fas fa-chart-bar"></i>Sevrice Requests</a>
                                 </li>
                                 <li>
@@ -89,7 +98,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="#" id="sr_link">
+                            <a href="request.html" id="sr_link">
                                 <i class="far fa-check-square"></i>Service Request</a>
                         </li>
                         <li>
@@ -841,8 +850,6 @@
         </div>
     </div>
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>

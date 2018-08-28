@@ -91,7 +91,10 @@ function toggleSignIn() {
     //$(".login-user").hide();
     //$(".login-link").hide();
     //$("#sign-up-header").hide()
-    $( location ).attr("href", "dashboard.html");
+    setTimeout(function () {
+        window.location.href = "dashboard.html"; //will redirect to your blog page (an ex: blog.html)
+     }, 2000); //will call the function after 2 secs.
+   // $( location ).attr("href", "dashboard.html");
 }
 
 /**
@@ -192,43 +195,48 @@ function initUser() {
 }
 */
 
-var initUser = function() {
+var initUser = function () {
     var accountdetails;
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in.
-        var displayName = user.displayName;
-        var email = user.email;
-        var emailVerified = user.emailVerified;
-        var photoURL = user.photoURL;
-        var uid = user.uid;
-        var phoneNumber = user.phoneNumber;
-        var providerData = user.providerData;
-        user.getIdToken().then(function(accessToken) {
-          document.getElementById('sign-in-status').textContent = 'Signed in';
-          //document.getElementById('sign-in').textContent = 'Sign out';
-        accountdetails = JSON.stringify({ displayName: displayName,
-            email: email,
-            emailVerified: emailVerified,
-            phoneNumber: phoneNumber,
-            photoURL: photoURL,
-            uid: uid,
-            accessToken: accessToken,
-            providerData: providerData
-          }, null, '  ');
-        });
-        $('.name').text(email);
-        $('.js-acc-btn').text(email);
-      } else {
-        // User is signed out.
-        document.getElementById('sign-in-status').textContent = 'Signed out';
-     //   document.getElementById('sign-in').textContent = 'Sign in';
-        document.getElementById('account-details').textContent = 'null';
-      }
-    }, function(error) {
-      console.log(error);
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            // User is signed in.
+            var displayName = user.displayName;
+            var email = user.email;
+            var emailVerified = user.emailVerified;
+            var photoURL = user.photoURL;
+            var uid = user.uid;
+            var phoneNumber = user.phoneNumber;
+            var providerData = user.providerData;
+            user.getIdToken().then(function (accessToken) {
+                document.getElementById('sign-in-status').textContent = 'Signed in';
+                //document.getElementById('sign-in').textContent = 'Sign out';
+                accountdetails = JSON.stringify({
+                    displayName: displayName,
+                    email: email,
+                    emailVerified: emailVerified,
+                    phoneNumber: phoneNumber,
+                    photoURL: photoURL,
+                    uid: uid,
+                    accessToken: accessToken,
+                    providerData: providerData
+                }, null, '  ');
+
+            });
+            $('.name').text(email);
+            $('.js-acc-btn').text(email);
+            
+
+        } else {
+            // User is signed out.
+            //document.getElementById('sign-in-status').textContent = 'Signed out';
+            //   document.getElementById('sign-in').textContent = 'Sign in';
+            //document.getElementById('account-details').textContent = 'null';
+            window.location.replace = "./login.html";
+        }
+    }, function (error) {
+        console.log(error);
     });
-  };
+};
 
 function initApp() {
     // Listening for auth state changes.
