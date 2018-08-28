@@ -216,8 +216,9 @@ var initUser = function() {
             accessToken: accessToken,
             providerData: providerData
           }, null, '  ');
-          document.getElementById('account-details').textContent = accountdetails;
         });
+        $('.name').text(email);
+        $('.js-acc-btn').text(email);
       } else {
         // User is signed out.
         document.getElementById('sign-in-status').textContent = 'Signed out';
