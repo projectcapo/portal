@@ -87,19 +87,17 @@ function toggleSignIn() {
         // [END authwithemail]
     }
     //document.getElementById('quickstart-sign-in').disabled = true;
-    //$(".logout-user").show();
-    //$(".login-user").hide();
-    //$(".login-link").hide();
-    //$("#sign-up-header").hide()
-    $( location ).attr("href", "dashboard.html");
+    $(".logout-user").show()
+    $(".login-user").hide()
+    $("#sign-up-header").hide()
 }
 
 /**
  * Handles the sign up button press.
  */
 function handleSignUp() {
-    var email = $("#email-login").val();
-    var password = $("#password-login").val();
+    var email = $("#email-input").val();
+    var password = $("#password-input").val();
     if (email.length < 4) {
         alert('Please enter an email address.');
         return;
@@ -253,9 +251,9 @@ function initApp() {
               document.getElementById('quickstart-verify-email').disabled = false;
             }
             */
-           //$(".logout-user").show();
-            //$(".login-user").hide();
-            //$("#sign-up-header").hide()
+            $(".logout-user").show()
+            $(".login-user").hide()
+            $("#sign-up-header").hide()
             // [END_EXCLUDE]
         } else {
             // User is signed out.
@@ -355,15 +353,13 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $(".sign-out").on("click", function (event) {
+    $(".logout-user").on("click", function (event) {
         event.preventDefault()
         event.stopPropagation()
         firebase.auth().signOut()
             .then(function () {
                 // Sign-out successful.
                 console.log("sign-out")
-                alert("signed out");
-                $( location ).attr("href", "index.html");
             })
             .catch(function (error) {
                 // An error happened
