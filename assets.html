@@ -44,6 +44,17 @@
         });
         } 
 </script>
+
+<script>
+        function myMap() {
+        var mapProp= {
+            center:new google.maps.LatLng(51.508742,-0.120850),
+            zoom:5,
+        };
+        var map=new google.maps.Map(document.getElementById('map'),mapProp);
+        }
+        </script>
+        
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -366,8 +377,11 @@
                             <i class="zmdi zmdi-map"></i>map data</h3>
                       <div id="map" class="map-wrap m-t-45 m-b-20">
                           <!-- Replace the value of the key parameter with your own API key. -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm5QedgW3D7wkJUe_waQRbrc5pZuvpZRc&callback=initMap" async defer></script>                        </div>
-                    </div>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm5QedgW3D7wkJUe_waQRbrc5pZuvpZRc&callback=initMap" async defer></script> -->     
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm5QedgW3D7wkJUe_waQRbrc5pZuvpZRc&callback=myMap"></script>
+
+</div>
+
                     <!-- END MAP DATA-->
 
     <!-- Jquery JS-->
