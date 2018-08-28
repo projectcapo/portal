@@ -86,6 +86,7 @@ aside {
 .login {
   font-size: 14px;
   color: red;
+  cursor: pointer;
 }
 .navbar-brand {
   color: black !important;
