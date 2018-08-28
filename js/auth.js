@@ -42,6 +42,8 @@ var providerData;
 /**
  * Handles the sign in button press.
  */
+$(".logout-link").hide()
+
 function toggleSignIn() {
     if (firebase.auth().currentUser) {
         // [START signout]
