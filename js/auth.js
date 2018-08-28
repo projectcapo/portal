@@ -96,8 +96,8 @@ function toggleSignIn() {
  * Handles the sign up button press.
  */
 function handleSignUp() {
-    var email = $("#email-login").val();
-    var password = $("#password-login").val();
+    var email = $("#email-input").val();
+    var password = $("#password-input").val();
     if (email.length < 4) {
         alert('Please enter an email address.');
         return;
