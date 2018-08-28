@@ -30,8 +30,7 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <link href="vendor/vector-map/jqvmap.min.css" rel="stylesheet" media="all">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm5QedgW3D7wkJUe_waQRbrc5pZuvpZRc&callback=initMap"
-    async defer></script>
+
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
@@ -47,17 +46,17 @@
       </style>
     <!-- Theme CSS -->
     <link href="css/heavy.css" rel="stylesheet">
-    <script>
-            var map;
-            function initMap() {
-              map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644},
-                zoom: 8
-              });
-            }
-          </script>
-</head>
 
+</head>
+<script>
+        var map;
+        function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+        });
+        }
+      </script>
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -380,7 +379,8 @@
                             <i class="zmdi zmdi-map"></i>map data</h3>
                       <div id="map" class="map-wrap m-t-45 m-b-20">
                             <div id="map"></div>
-                        </div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm5QedgW3D7wkJUe_waQRbrc5pZuvpZRc&callback=initMap" async defer></script>                        </div>
                     </div>
                     <!-- END MAP DATA-->
 
