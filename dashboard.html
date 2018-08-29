@@ -51,7 +51,8 @@
         <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
-                    <div class="header-mobile-inner">
+                        <h1 class="swag"> <a href="index.html" >SWAG DOCTORS</a> </h1>
+                    <div class="header-mobile-inner">                     
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
@@ -64,7 +65,7 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="dashboard.html">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
@@ -72,7 +73,7 @@
                                         <i class="fas fa-chart-bar"></i>Sevrice Requests</a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="">
                                         <i class="fas fa-calendar-alt"></i>Calendar</a>
                                 </li>
                                 <li>
@@ -87,7 +88,7 @@
 
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">         
-            <a class="logo home" href="#">
+            <a class="logo home" href="index.html">
                 <h1 id="swag"> SWAG DOCTORS </h1>
             </a>            
             <div class="menu-sidebar__content js-scrollbar1">
@@ -116,7 +117,7 @@
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
-        <div class="page-container">
+        <div id="top-page" class="page-container">
             <!-- HEADER DESKTOP-->
             <header class="header-desktop">
                 <div class="section__content section__content--p30">
@@ -158,7 +159,7 @@
                                                 </div>
                                             </div>
                                             <div class="mess__footer">
-                                                <a href="#">View all messages</a>
+                                                <a href="#new-messages">View all messages</a>
                                             </div>
                                         </div>
                                     </div>
@@ -167,7 +168,7 @@
                                         <span class="quantity">1</span>
                                         <div class="email-dropdown js-dropdown">
                                             <div class="email__title">
-                                                <p>You have 3 New Service Requests</p>
+                                                <p>You have 3 Tasks Assigned</p>
                                             </div>
                                             <div class="email__item">
                                                 <div class="image img-cir img-40">
@@ -197,7 +198,7 @@
                                                 </div>
                                             </div>
                                             <div class="email__footer">
-                                                <a href="#">See all emails</a>
+                                                <a href="#tasks">See all task</a>
                                             </div>
                                         </div>
                                     </div>
@@ -593,7 +594,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div id="tasks" class="col-lg-6">
                                 <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
                                     <div class="au-card-title" style="background-image:url('images/bg-title-01.jpg');">
                                         <div class="bg-overlay bg-overlay--blue"></div>
@@ -663,7 +664,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div id="new-messages" class="col-lg-6">
                                 <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
                                     <div class="au-card-title" style="background-image:url('images/bg-title-02.jpg');">
                                         <div class="bg-overlay bg-overlay--blue"></div>
@@ -846,9 +847,11 @@
                         </div>
                     </div>
                 </div>
+                <a type="button" onclick="topFunction()" class="btn btn-primary" id="myBtn" href="#top-page">TOP</a>
             </div>
-        </div>
+        </div>    
     </div>
+    
 
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>

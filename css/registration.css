@@ -106,7 +106,7 @@ h1 {
     cursor: pointer;
 } 
 input.agileits-btm {
-    margin-bottom: 0 !important;
+    margin-bottom: 1 !important;
 }
 .contact-wthree input[type="submit"]:hover {
     background: transparent;

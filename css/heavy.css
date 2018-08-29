@@ -190,7 +190,10 @@ a {
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-
+.request {
+    margin: 25px;
+    max-width: 95%;
+}
 /*-----------------------------------------------------*/
 /*                   OBJECTS                           */
 /*-----------------------------------------------------*/
@@ -1570,6 +1573,14 @@ section {
     border-right: 1px solid #e5e5e5;
     position: relative;
     z-index: 3;
+}
+.swag {
+    font-size: 35px;
+    font-family: 'Rammetto One', cursive;
+    font-weight: 300px; 
+    text-align: center;
+    position: relative;
+    margin: 0px;
 }
 #swag {
     font-size: 22px;

@@ -19,6 +19,9 @@ var email = "";
 var password = "";
 var mobile = "";
 var address = "";
+var city = "";
+var state = "";
+var zipCode = "";
 
 // Capture Button Click
 $("#add-user").on("click", function (event) {
@@ -31,6 +34,9 @@ $("#add-user").on("click", function (event) {
     password = $("#password-input").val().trim();
     mobile = $("#mobile-input").val().trim();
     address = $("#address-input").val().trim();
+    city = $("city-input").val().trim();
+    state = $("state-input").val().trim();
+    zipCode = $("zipCode-input").val().trim();
 
     // Code for the push
     dataRef.ref('users').push({
@@ -41,6 +47,9 @@ $("#add-user").on("click", function (event) {
         // password: password,
         mobile: mobile,
         address: address,
+        city: city,
+        state: state,
+        zipCode: zipCode,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 });
