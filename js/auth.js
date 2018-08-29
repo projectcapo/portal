@@ -210,7 +210,7 @@ var initUser = function () {
             var phoneNumber = user.phoneNumber;
             var providerData = user.providerData;
             user.getIdToken().then(function (accessToken) {
-                document.getElementById('sign-in-status').textContent = 'Signed in';
+               // document.getElementById('sign-in-status').textContent = 'Signed in';
                 //document.getElementById('sign-in').textContent = 'Sign out';
                 accountdetails = JSON.stringify({
                     displayName: displayName,
@@ -226,7 +226,8 @@ var initUser = function () {
             });
             $('.name').text(email);
             $('.js-acc-btn').text(email);
-            
+            $('.name').text(email);
+            $('#navul').append('<li><a id="dash" href="dashboard.html">Dashboard</a></li>');
 
         } else {
             // User is signed out.
