@@ -50,8 +50,8 @@ function toggleSignIn() {
         firebase.auth().signOut();
         // [END signout]
     } else {
-        var email = $("#email-login").val();
-        var password = $("#password-login").val();
+        var email = $("#email_input").val();
+        var password = $("#password_input").val();
 
         if (email.length < 4) {
             alert('Please enter an email address.');
@@ -103,8 +103,8 @@ function toggleSignIn() {
  * Handles the sign up button press.
  */
 function handleSignUp() {
-    var email = $("#email-input").val();
-    var password = $("#password-input").val();
+    var email = $("#email_input").val();
+    var password = $("#password_input").val();
     if (email.length < 4) {
         alert('Please enter an email address.');
         return;
@@ -128,6 +128,8 @@ function handleSignUp() {
         console.log(error);
         // [END_EXCLUDE]
     });
+
+    toggleSignIn()
     // [END createwithemail]
 }
 

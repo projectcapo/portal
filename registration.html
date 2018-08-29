@@ -24,6 +24,13 @@
     <!-- Theme CSS -->
     <link href="css/main.css" rel="stylesheet">
     <link href="css/registration.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script type="text/JavaScript" src="js/auth.js"></script>
+    <script type="text/JavaScript" src="js/jquery.validate.js"></script>
+    <script type="text/JavaScript" src="js/register.js"></script>
+
+    
 </head>
 <body id="page-top">
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
@@ -65,17 +72,17 @@
                 <p>Please Enter Your Information Below</p>
             </div>
             <div class="contact-wthree">
-                <form action="#" method="post">
+                <form id="signupForm" action="#" method="post">
                     <h3>Step 1 :</h3>
                     <div class="form-w3step1">
-                        <input type="text" id="name-input" name="Name" placeholder="Your Name" required="">
+                        <input type="text" id="name_input" name="Name" placeholder="Your Name" required="">
                         <input type="text" id="company-input" name="Company Name" placeholder="Company Name">
-                        <input type="email" class="email agileits-btm" id="email-input" name="Email" placeholder="Email" required="">
+                        <input type="email" class="email agileits-btm" id="email_input" name="Email" placeholder="Email" required="">
                     </div>
                     <h3>Step 2 :</h3>
                     <div class="form-w3step1">
-                        <input type="password" id="password-input" name="Password" placeholder="Password" required="">
-                        <input type="password" class="agileits-btm" name="confirm password" placeholder="Confirm Password" required="">
+                        <input type="password" id="password_input" name="Password" placeholder="Password" required="">
+                        <input type="password" id="confirm_password" name="confirm password" placeholder="Confirm Password" required="">
                     </div>
                     <h3>Step 3 :</h3>
                     <div class="form-w3step1 w3ls-formrow">
@@ -83,11 +90,11 @@
                         <input type="text" class="agileits-btm" id="address-input" name="Address" placeholder="Address">
                         <input type="text" class="agileits-btm" id="city-input" name="City" placeholder="City">
                         <input type="text" class="agileits-btm" id="state-input" name="State" placeholder="State">
-                        <input type="text" class="agileits-btm" id="zipCode-input" name="ZipCode" placeholder="ZipCode">
+                        <input type="text" class="agileits-btm" id="zipCode_input" name="ZipCode" placeholder="ZipCode">
                     </div>
                     <div class="agileits-row2 w3ls-formrow2">
-                        <input type="checkbox" id="brand2" value="">
-                        <label for="brand2">
+                        <input type="checkbox" id="acceptterms" value="">
+                        <label for="acceptterms">
                             <span></span>I accept the terms of Use</label>
                     </div>
                     <input id="add-user" type="submit" value="SUBMIT">
@@ -95,9 +102,6 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
-    <script type="text/JavaScript" src="js/auth.js"></script>
-    <script type="text/JavaScript" src="js/register.js"></script>
+
 </body>
 </html>
