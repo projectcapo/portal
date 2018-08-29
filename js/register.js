@@ -90,6 +90,7 @@ $().ready(function () {
         form.validate(); // "validate" method is required for jquery.validate.js
 
         if (form.valid()) {
+            $("#add-user").hide();
             handleSignUp();
             // Code for the push
             dataRef.ref('users').push({
@@ -103,6 +104,9 @@ $().ready(function () {
                 zipCode: zipCode,
                 dateAdded: firebase.database.ServerValue.TIMESTAMP
             });
+            setTimeout(function () {
+                window.location.href = "dashboard.html"; //will redirect to your page
+             }, 2000); //will call the function after 2 secs.
         }
     });
 });

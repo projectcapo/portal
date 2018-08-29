@@ -44,6 +44,7 @@ var providerData;
  */
 $(".logout-link").hide()
 
+
 function toggleSignIn() {
     if (firebase.auth().currentUser) {
         // [START signout]
@@ -129,7 +130,7 @@ function handleSignUp() {
         // [END_EXCLUDE]
     });
 
-    toggleSignIn()
+    //toggleSignIn()
     // [END createwithemail]
 }
 
