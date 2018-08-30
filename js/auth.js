@@ -64,15 +64,19 @@ function toggleSignIn() {
         }
 
         firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-            .then(function () {
+            .then(function() {
                 // Existing and future Auth states are now persisted in the current
                 // session only. Closing the window would clear any existing state even
                 // if a user forgets to sign out.
                 // ...
                 // New sign-in will be persisted with session persistence.
+                $(".login-link").hide();
+                setTimeout(function() {
+                    window.location.href = "dashboard.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2000); //will call the function after 2 secs.
                 return firebase.auth().signInWithEmailAndPassword(email, password);
             })
-            .catch(function (error) {
+            .catch(function(error) {
                 // Handle Errors here.
                 var errorCode = error.code;
                 var errorMessage = error.message;
@@ -83,21 +87,10 @@ function toggleSignIn() {
                     alert(errorMessage);
                 }
                 console.log(error);
-
-                //document.getElementById('quickstart-sign-in').disabled = false;
                 // [END_EXCLUDE]
             });
         // [END authwithemail]
     }
-    //document.getElementById('quickstart-sign-in').disabled = true;
-    //$(".logout-user").show();
-    //$(".login-user").hide();
-    $(".login-link").hide();
-    //$("#sign-up-header").hide()
-    setTimeout(function () {
-        window.location.href = "dashboard.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 2000); //will call the function after 2 secs.
-   // $( location ).attr("href", "dashboard.html");
 }
 
 /**
@@ -116,7 +109,7 @@ function handleSignUp() {
     }
     // Sign in with email and pass.
     // [START createwithemail]
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -129,8 +122,6 @@ function handleSignUp() {
         console.log(error);
         // [END_EXCLUDE]
     });
-
-    //toggleSignIn()
     // [END createwithemail]
 }
 
@@ -139,7 +130,7 @@ function handleSignUp() {
  */
 function sendEmailVerification() {
     // [START sendemailverification]
-    firebase.auth().currentUser.sendEmailVerification().then(function () {
+    firebase.auth().currentUser.sendEmailVerification().then(function() {
         // Email Verification sent!
         // [START_EXCLUDE]
         alert('Email Verification Sent!');
@@ -151,12 +142,12 @@ function sendEmailVerification() {
 function sendPasswordReset() {
     var email = document.getElementById('email').value;
     // [START sendpasswordemail]
-    firebase.auth().sendPasswordResetEmail(email).then(function () {
+    firebase.auth().sendPasswordResetEmail(email).then(function() {
         // Password Reset Email Sent!
         // [START_EXCLUDE]
         alert('Password Reset Email Sent!');
         // [END_EXCLUDE]
-    }).catch(function (error) {
+    }).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -200,20 +191,44 @@ function initUser() {
 }
 */
 
-var initUser = function () {
+var initUser = function() {
     var accountdetails;
-    firebase.auth().onAuthStateChanged(function (user) {
+
+    firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
-            var displayName = user.displayName;
+
+            //var displayName = user.displayName;
             var email = user.email;
             var emailVerified = user.emailVerified;
             var photoURL = user.photoURL;
             var uid = user.uid;
             var phoneNumber = user.phoneNumber;
             var providerData = user.providerData;
-            user.getIdToken().then(function (accessToken) {
-               // document.getElementById('sign-in-status').textContent = 'Signed in';
+            console.log("user logged in");
+
+            dataRef.ref('/users/').orderByChild("email").equalTo(email).on('value', function(snapshot) {
+                //snapshot would have list of NODES that satisfies the condition
+                console.log(snapshot.val())
+                console.log('-----------');
+
+                //go through each item found and print out the emails
+                snapshot.forEach(function(childSnapshot) {
+
+                    var key = childSnapshot.key;
+                    var childData = childSnapshot.val();
+                    //this will be the actual email value found
+                    console.log(childData.email);
+                    console.log(childData.name);
+                    //$('.js-acc-btn').text(childData.name);
+                    $('.email').text(childData.email);
+                    $('.name').text(childData.name);
+                });
+
+            });
+
+            user.getIdToken().then(function(accessToken) {
+                // document.getElementById('sign-in-status').textContent = 'Signed in';
                 //document.getElementById('sign-in').textContent = 'Sign out';
                 accountdetails = JSON.stringify({
                     displayName: displayName,
@@ -227,9 +242,9 @@ var initUser = function () {
                 }, null, '  ');
 
             });
-            $('.name').text(email);
-            $('.js-acc-btn').text(email);
-            $('.name').text(email);
+            //   $('.name').text(displayName);
+  
+
             $('#navul').append('<li><a id="dash" href="dashboard.html">Dashboard</a></li>');
 
         } else {
@@ -239,7 +254,7 @@ var initUser = function () {
             //document.getElementById('account-details').textContent = 'null';
             window.location.replace = "./login.html";
         }
-    }, function (error) {
+    }, function(error) {
         console.log(error);
     });
 };
@@ -247,7 +262,7 @@ var initUser = function () {
 function initApp() {
     // Listening for auth state changes.
     // [START authstatelistener]
-    firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().onAuthStateChanged(function(user) {
         // [START_EXCLUDE silent]
         //    document.getElementById('quickstart-verify-email').disabled = true;
         // [END_EXCLUDE]
@@ -295,37 +310,37 @@ function initApp() {
     //document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
 }
 
-$(document).ready(function () {
-    $(".login-user").on("click", function (event) {
+$(document).ready(function() {
+    $(".login-user").on("click", function(event) {
         event.preventDefault();
         toggleSignIn();
     })
 });
 
-$(document).ready(function () {
-    $(".sign-out").on("click", function (event) {
+$(document).ready(function() {
+    $(".sign-out").on("click", function(event) {
         event.preventDefault()
         event.stopPropagation()
         firebase.auth().signOut()
-            .then(function () {
+            .then(function() {
                 // Sign-out successful.
                 console.log("sign-out");
-                $( location ).attr("href", "index.html");
+                $(location).attr("href", "index.html");
             })
-            .catch(function (error) {
+            .catch(function(error) {
                 // An error happened
                 console.log("ERR MSG" + error)
             });
     });
 });
 
-auth.onAuthStateChanged(function (user) {
+auth.onAuthStateChanged(function(user) {
     if (user) {
         $(".logout-link").show()
         $(".login-link").hide()
         $(".login-user").hide()
         $("#sign-up-header").hide()
-   } else {
+    } else {
         $(".logout-link").hide()
         $(".login-user").show()
         $("#sign-up-header").show()

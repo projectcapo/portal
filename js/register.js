@@ -59,7 +59,7 @@ $("#signupForm").validate({
             minlength: "Your password must be at least 5 characters long",
             equalTo: "Please enter the same password as above"
         },
-        email_input: "Please enter a valid email address",
+        email_input: "Please enter a TTT valid email address",
         accept: "Please accept our policy"
     }
 });
