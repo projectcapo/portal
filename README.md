@@ -17,6 +17,7 @@ Tim was responsible for project functionality flow and Git management. Melton wa
 
 Challenges. 
 Lots of work on UI. Site is complex, we had issues with navigation. Issues with FB authentication failing.
+DONT. PUSH. TO MASTER!!!!!
 
 Improvements. 
 Add additional functionality to widgets, chat bot and links. More authentication options. 
