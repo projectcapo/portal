@@ -39,12 +39,6 @@ var photoURL;
 var uid;
 var providerData;
 
-/**
- * Handles the sign in button press.
- */
-$(".logout-link").hide()
-
-
 function toggleSignIn() {
     if (firebase.auth().currentUser) {
         // [START signout]
@@ -90,6 +84,7 @@ function toggleSignIn() {
                 // [END_EXCLUDE]
             });
         // [END authwithemail]
+        $(".logout-link").hide()
     }
 }
 
@@ -163,34 +158,6 @@ function sendPasswordReset() {
     // [END sendpasswordemail];
 }
 
-/**
- * initApp handles setting up UI event listeners and registering Firebase auth listeners:
- *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
- *    out, and that is where we update the UI.
- */
-
-/*
-function initUser() {
-
-    var user = firebase.auth().currentUser;
-
-    if (user != null) {
-        user.providerData.forEach(function (profile) {
-            console.log("Sign-in provider: " + profile.providerId);
-            console.log("  Provider-specific UID: " + profile.uid);
-            console.log("  Name: " + profile.displayName);
-            console.log("  Email: " + profile.email);
-            console.log("  Photo URL: " + profile.photoURL);
-        });
-    } else {
-        // No user is signed in.
-        console.log("not signed in")
-        //window.location.replace("./login.html")
-    }
-
-}
-*/
-
 var initUser = function() {
     var accountdetails;
 
@@ -200,53 +167,34 @@ var initUser = function() {
 
             //var displayName = user.displayName;
             var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
             var uid = user.uid;
             var phoneNumber = user.phoneNumber;
-            var providerData = user.providerData;
             console.log("user logged in");
-
-            dataRef.ref('/users/').orderByChild("email").equalTo(email).on('value', function(snapshot) {
-                //snapshot would have list of NODES that satisfies the condition
-                console.log(snapshot.val())
-                console.log('-----------');
-
-                //go through each item found and print out the emails
-                snapshot.forEach(function(childSnapshot) {
-
-                    var key = childSnapshot.key;
-                    var childData = childSnapshot.val();
-                    //this will be the actual email value found
-                    console.log(childData.email);
-                    console.log(childData.name);
-                    //$('.js-acc-btn').text(childData.name);
-                    $('.email').text(childData.email);
-                    $('.name').text(childData.name);
-                });
-
-            });
 
             user.getIdToken().then(function(accessToken) {
                 // document.getElementById('sign-in-status').textContent = 'Signed in';
                 //document.getElementById('sign-in').textContent = 'Sign out';
-                accountdetails = JSON.stringify({
-                    displayName: displayName,
-                    email: email,
-                    emailVerified: emailVerified,
-                    phoneNumber: phoneNumber,
-                    photoURL: photoURL,
-                    uid: uid,
-                    accessToken: accessToken,
-                    providerData: providerData
-                }, null, '  ');
+                dataRef.ref('/users/').orderByChild("email").equalTo(email).on('value', function(snapshot) {
+                    //snapshot would have list of NODES that satisfies the condition
+                    console.log(snapshot.val())
+                    console.log('-----------');
+        
+                    //go through each item found and print out the emails
+                    snapshot.forEach(function(childSnapshot) {
+                        var key = childSnapshot.key;
+                        var childData = childSnapshot.val();
+                        //this will be the actual email value found
+                        console.log(childData.email);
+                        console.log(childData.name);
+                        //$('.js-acc-btn').text(childData.name);
+                        $('.email').text(childData.email);
+                        $('.name').text(childData.name);
+                    });
+                    $('#navul').append('<li><a id="dash" href="dashboard.html">Dashboard</a></li>');
 
+                }, null, '  ');
             });
             //   $('.name').text(displayName);
-  
-
-            $('#navul').append('<li><a id="dash" href="dashboard.html">Dashboard</a></li>');
-
         } else {
             // User is signed out.
             //document.getElementById('sign-in-status').textContent = 'Signed out';
@@ -340,6 +288,9 @@ auth.onAuthStateChanged(function(user) {
         $(".login-link").hide()
         $(".login-user").hide()
         $("#sign-up-header").hide()
+
+
+
     } else {
         $(".logout-link").hide()
         $(".login-user").show()

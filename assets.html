@@ -30,9 +30,15 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <link href="vendor/vector-map/jqvmap.min.css" rel="stylesheet" media="all">
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
 
     <!-- Theme CSS -->
     <link href="css/heavy.css" rel="stylesheet">
+    <script src="js/auth.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/requestLogic.js"></script>
 
 </head>
 <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
@@ -40,6 +46,8 @@
 
 <script type="text/javascript">
   window.onload = function() {
+    initUser()
+
     L.mapquest.key = '2xceOkLeRmoodqyeSZn3FicXmA29woPN';
 
     var map = L.mapquest.map('map', {
@@ -273,7 +281,7 @@
                                             <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="name js-acc-btn" href="#">john doe</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
