@@ -84,7 +84,7 @@
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
                                     <a href="request.html">
-                                        <i class="fas fa-chart-bar"></i>Service Request</a>
+                                        <i class="fas fa-check-square"></i>Service Request</a>
                                 </li>
                                 <li>
                                     <a href="#">
@@ -93,6 +93,10 @@
                                 <li>
                                     <a href="assets.html">
                                         <i class="fas fa-map-marker-alt"></i>Assets</a>
+                                </li>
+                                <li>
+                                    <a href="chatbot.html">
+                                        <i class="fas fa-comments"></i>Personal Assistant</a>
                                 </li>
                                 <li class="has-sub">
                                     <a class="js-arrow" href="#">
@@ -120,7 +124,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             
-            <a class="logo" href="">
+            <a class="logo" href="index.html">
                 <h1 id="swag"> SWAG DOCTORS </h1>
             </a>
             
@@ -142,6 +146,10 @@
                         <li>
                             <a href="assets.html">
                                 <i class="fas fa-map-marker-alt"></i>Assets</a>
+                        </li>
+                        <li>
+                            <a href="chatbot.html">
+                                <i class="fas fa-comments"></i>Personal Assistant</a>
                         </li>
                     </ul>
                 </nav>
@@ -304,15 +312,15 @@
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                        <i class="zmdi zmdi-settings"></i>Settings</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-money-box"></i>Billing</a>
                                                 </div>
                                             </div>
-                                            <div class="account-dropdown__footer">
-                                                <a href="#">
+                                            <div class="account-dropdown__footer sign-out">
+                                                <a href="">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>
@@ -324,27 +332,52 @@
                 </div>
             </header>
             <!-- HEADER DESKTOP-->
+             <!-- BREADCRUMB-->
+             <section class="au-breadcrumb m-t-75">
+                    <div class="section__content section__content--p30">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="au-breadcrumb-content">
+                                        <div class="au-breadcrumb-left">
+                                            <span class="au-breadcrumb-span">You are here:</span>
+                                            <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                                <li class="list-inline-item seprate">
+                                                    <span>/</span>
+                                                </li>
+                                                <li class="list-inline-item">Assets</li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- END BREADCRUMB-->
 
-<!-- MAIN CONTENT-->
+
 <!-- MAIN CONTENT-->
 <div class="main-content">
     <div class="section__content section__content--p30">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
+                    
                     <!-- MAP DATA-->
                     <div class="map-data m-b-40">
                         <h3 class="title-3 m-b-30">
                             <i class="zmdi zmdi-map" ></i>map data</h3>
                       <div id="map" class="map-wrap m-t-45 m-b-20" style="width:100%;height:400px;"></div>
                     </div>
+                    <!-- END MAP DATA-->
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-                    <!-- END MAP DATA-->
+<!-- END MAIN CONTENT-->
+                    
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
