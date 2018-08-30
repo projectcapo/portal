@@ -84,7 +84,12 @@
 			float: right;
 			background-color: #f77;
 		}
-	</style>
+    </style>
+    <script type="text/javascript">
+        window.addEventListener('load', function () {
+            initUser()
+        });
+    </script>
 </head>
 
         
@@ -398,7 +403,7 @@
 
                     <div class="map-data m-b-40">
                         <h3 class="title-3 m-b-30">
-                            <i class="zmdi zmdi-map" ></i>Personal Assistant</h3>
+                            <i class="zmdi zmdi-comments" ></i>Personal Assistant</h3>
                       <div id="conversation" style="width: 400px; height: 400px; border: 1px solid #ccc; background-color: #eee; padding: 4px; overflow: scroll"></div>
 
                       <form id="chatform" style="margin-top: 10px" onsubmit="return pushChat();">
